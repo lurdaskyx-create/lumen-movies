@@ -85,6 +85,11 @@ export default function MediaDetail({ details }: { details: MediaDetails }) {
             )}
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
+              {isMovie && (
+                <Link href={`/watch/${details.id}`} className="btn-primary">
+                  Watch Full Movie
+                </Link>
+              )}
               {details.trailerKey ? (
                 <TrailerButton videoKey={details.trailerKey} title={details.title} />
               ) : (
